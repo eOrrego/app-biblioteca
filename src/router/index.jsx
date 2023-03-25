@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import BookList from "../components/BookList";
 import LayoutPrivate from "../layout/LayoutPrivate";
 import LayoutPublic from "../layout/LayoutPublic";
 import Aboutus from "../pages/Aboutus";
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />,
+            },
+            {
+                path: 'book',
+                element: <BookList />,
             },
             {
                 path: '/login',
