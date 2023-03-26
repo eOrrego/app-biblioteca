@@ -3,6 +3,7 @@ import SearchForm from '../components/SearchForm';
 import "./Home.css";
 
 const Home = () => {
+
     return (
         <div className='holder'>
             <header className='header'>
