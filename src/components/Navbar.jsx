@@ -10,7 +10,7 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 library.add(faBook);
 
 
-export default function NavBar() {
+export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
     const { user, loading, logout } = useAuth();
     const navigate = useNavigate();
