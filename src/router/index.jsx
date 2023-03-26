@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import BookList from "../components/BookList";
 import LayoutPrivate from "../layout/LayoutPrivate";
 import LayoutPublic from "../layout/LayoutPublic";
 import Aboutus from "../pages/Aboutus";
@@ -9,6 +8,7 @@ import Dashboards from "../pages/Dashboards";
 import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import ModalBooks from "../pages/ModalBooks";
 import Register from "../pages/Register";
 
 
@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'book',
-                element: <BookList />,
+                element: <ModalBooks />,
             },
             {
                 path: '/book/:id',

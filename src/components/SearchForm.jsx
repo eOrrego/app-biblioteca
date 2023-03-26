@@ -19,13 +19,16 @@ const SearchForm = () => {
         e.preventDefault();
         let tempSearchTerm = searchText.current.value.trim();
         if ((tempSearchTerm.replace(/[^\w\s]/gi, "")).length === 0) {
-            setSearchTerm("the lost world");
-            setResultTitle("Please Enter Something ...");
+            // setSearchTerm("the lost world");
+            setResultTitle("Por favor ingrese algo ...");
         } else {
             setSearchTerm(searchText.current.value);
         }
 
+        // <Navigate to={<Aboutus />} replace={true} />
+        // <Aboutus />
         navigate("/book");
+        // navigate("/about");
     };
 
     return (
