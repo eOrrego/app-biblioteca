@@ -1,8 +1,13 @@
 import React, { useRef, useEffect } from 'react';
-// import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../context/FetchBooksContext';
 import "./SearchForm.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faMagnifyingGlass);
 
 const SearchForm = () => {
     const { setSearchTerm, setResultTitle } = useGlobalContext();
@@ -28,10 +33,10 @@ const SearchForm = () => {
             <div className='container'>
                 <div className='search-form-content'>
                     <form className='search-form' onSubmit={handleSubmit}>
-                        <div className='search-form-elem flex flex-sb bg-white'>
-                            <input type="text" className='form-control' placeholder='The Lost World ...' ref={searchText} />
-                            <button type="submit" className='flex flex-c' onClick={handleSubmit}>
-                                {/* <FaSearch className='text-purple' size={32} /> */}
+                        <div className='search-form-elem flex flex-sb bg-white justify-between'>
+                            <input type="text" className='form-control text-black' placeholder='Moby Dick ...' ref={searchText} />
+                            <button type="submit" className='flex items-center	' onClick={handleSubmit}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-black text-4xl" />
                             </button>
                         </div>
                     </form>
