@@ -25,7 +25,7 @@ const BookList = () => {
         <>
         <Home />
         <section className='booklist'>
-            <div className='container'>
+            <div className='container mx-auto'>
                 <div className='section-title'>
                     <h2>{resultTitle}</h2>
                 </div>

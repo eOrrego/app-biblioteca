@@ -5,9 +5,9 @@ import { useAuth } from "../context/AuthContext";
 
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBook, faBookOpen, faBookOpenReader, faBookReader } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBook, faBookOpen, faBookOpenReader, faBookReader);
+library.add(faBook);
 
 
 export default function NavBar() {

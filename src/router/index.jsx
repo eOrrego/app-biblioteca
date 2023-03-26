@@ -3,6 +3,7 @@ import BookList from "../components/BookList";
 import LayoutPrivate from "../layout/LayoutPrivate";
 import LayoutPublic from "../layout/LayoutPublic";
 import Aboutus from "../pages/Aboutus";
+import BookDetails from "../pages/BookDetails";
 import Contact from "../pages/Contact";
 import Dashboards from "../pages/Dashboards";
 import Error from "../pages/Error";
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: 'book',
                 element: <BookList />,
+            },
+            {
+                path: '/book/:id',
+                element: <BookDetails />,
             },
             {
                 path: '/login',

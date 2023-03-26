@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBook, faBookOpen, faBookOpenReader, faBookReader } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faBook, faBookOpen, faBookOpenReader, faBookReader);
+library.add(faBook);
 
 const Footer = () => {
     return (
@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                     <p className="mt-2 text-sm text-white md:hidden">Descubre mundos infinitos entre nuestras páginas</p>
                 </div>
-                <div className="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
+                <div className="flex flex-wrap flex-grow mt-10 text-center md:pl-20 md:mt-0 md:text-left">
                     <div className="w-full px-4 lg:w-1/4 md:w-1/2">
                         <h2 className="mb-3 text-sm font-medium tracking-widest text-white uppercase title-font">Pages</h2>
                         <nav className="mb-10 list-none">
