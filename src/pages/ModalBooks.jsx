@@ -5,7 +5,7 @@ import { useGlobalContext } from '../context/FetchBooksContext';
 import Home from './Home';
 
 const ModalBooks = () => {
-    const { resultTitle } = useGlobalContext();
+    const { resultTitle, loading } = useGlobalContext();
     const [showModal, setShowModal] = useState(true);
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const ModalBooks = () => {
                                 {/*header*/}
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                     <h3 className="text-3xl font-semibold">
-                                        {resultTitle}
+                                        {!loading && resultTitle ? resultTitle : "Cargando..."}
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"

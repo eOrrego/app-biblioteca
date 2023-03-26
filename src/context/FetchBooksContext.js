@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
-const URL = "http://openlibrary.org/search.json?title=";
+const URL = "https://openlibrary.org/search.json?title=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-    const [searchTerm, setSearchTerm] = useState("the lost world");
+    const [searchTerm, setSearchTerm] = useState("");
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [resultTitle, setResultTitle] = useState("");
@@ -12,12 +12,20 @@ const AppProvider = ({ children }) => {
     const fetchBooks = useCallback(async () => {
         setLoading(true);
         try {
-            const response = await fetch(`${URL}${searchTerm}`);
+
+            if (searchTerm === "") {
+                setBooks([]);
+                setResultTitle("¡No se encontraron resultados de búsqueda!");
+                setLoading(false);
+                return;
+            }
+
+            const response = await fetch(`${URL}${searchTerm}&limit=12`);
             const data = await response.json();
             const { docs } = data;
 
             if (docs) {
-                const newBooks = docs.slice(0, 20).map((bookSingle) => {
+                const newBooks = docs.map((bookSingle) => {
                     const { key, author_name, cover_i, edition_count, first_publish_year, title } = bookSingle;
 
                     return {
