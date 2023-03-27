@@ -1,21 +1,17 @@
 import { Outlet } from "react-router-dom"
+import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 
 const LayoutPublic = () => {
+
     return (
         <>
-            <div className="bg-slate-300 text-black h-screen flex text-white">
+            <div>
                 <Navbar />
-                <hr />
-                <br />
                 <main>
                     <Outlet />
                 </main>
-                <br />
-                <hr />
-                <footer>
-                    #Footer
-                </footer>
+                <Footer />
             </div>
         </>
     )
